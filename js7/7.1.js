@@ -20,18 +20,22 @@ Si l'utilisateur entre un nombre trop élevé, il doit afficher "Trop élevé"
 et poser à nouveau la question. Si l'utilisateur devine correctement,
  il devrait afficher "Bien deviné!" et sortir. */
 
-const readlineSync = require("readline-sync");
+ const readlineSync = require("readline-sync");
 
-function getRandomNumb() {
-  return Math.floor(Math.random() * Math.floor(100));
-}
-getRandomNumb();
+ function numberAl = () => { // declare la fonction dans laquelle les variables vont etre utiliser et la boucle faite
+ let result = Math.floor(Math.random() * Math.floor(100));// genere le nombre aléatoire
+ let userResult //declarer la variable en dehors pour pouvoir l'utiliser dedans
 
-let askUser = parseInt(readlineSync.question("Guess the number ? "));
-do {
-    if(getRandomNumb < askUser) {
-      console.log("too low");
-    }else if(getRandomNumb > askUser) {
-      console.log("Too High");
-    }
-}  while(askUser != getRandomNumb);
+ do {
+   userResult = readlineSync.question("Guess the number");//pose la question
+   if (result > userResult) { // fait la comparaison
+     console.log("too High");
+   } else if (result < userResult) {
+     console.log("too Low");
+   } else {
+     console.log("you win");
+   }
+ } while (result != userResult); //ferme la boucle avec la condition
+
+ }
+ numberAl(); //appelle la fonction

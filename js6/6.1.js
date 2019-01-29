@@ -5,7 +5,7 @@ Add a getter accessor named surface that will return the surface of the circle.
 
 Test its method and accessors by modifying the values and checking if everything is consistent.*/
 
-class circle {
+class Circle {
   constructor(xPos, yPos, radius) {
     this.xPos = xPos;
     this.yPos = yPos;
@@ -23,7 +23,7 @@ class circle {
     return Math.PI * this.radius * this.radius;
   }
 }
-var circle1 = new circle(6, 8, 5);
+var circle1 = new Circle(6, 8, 5);
 
 
 console.log(circle1.surface);
